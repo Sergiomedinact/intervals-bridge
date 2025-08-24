@@ -16,15 +16,17 @@ def home():
 def get_activities():
     oldest = request.args.get("oldest")
     newest = request.args.get("newest")
+
     url = f"{BASE_URL}/athlete/{ATHLETE_ID}/activities?oldest={oldest}"
     if newest:
         url += f"&newest={newest}"
-    headers = {
-    "Authorization": API_KEY,
-    "Accept": "application/json"
-}
-response = requests.get(url, headers=headers)
 
+    headers = {
+        "Authorization": API_KEY,              # 🔑 Aquí va solo tu API Key
+        "Accept": "application/json"           # 👈 Opcional pero recomendado
+    }
+
+    response = requests.get(url, headers=headers)
     return jsonify(response.json())
 
 if __name__ == "__main__":
