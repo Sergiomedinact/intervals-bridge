@@ -19,7 +19,7 @@ def get_activities():
     url = f"{BASE_URL}/athlete/{ATHLETE_ID}/activities?oldest={oldest}"
     if newest:
         url += f"&newest={newest}"
-    headers = {"Authorization": f"Bearer {API_KEY}"}
+    headers = {"Authorization": API_KEY}
     response = requests.get(url, headers=headers)
     return jsonify(response.json())
 
