@@ -18,8 +18,10 @@ def home():
 def check():
     url = f"{BASE_URL}/athlete/{ATHLETE_ID}"
     headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Accept": "application/json"
+    "Authorization": "Bearer 2nyzs4vi7ljd3gg04evcvlz88",  # 👈 tu API key directa
+    "Accept": "application/json"
+}
+
     }
     response = requests.get(url, headers=headers)
     return jsonify({
