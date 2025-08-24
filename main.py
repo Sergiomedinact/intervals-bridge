@@ -22,8 +22,12 @@ def get_activities():
         url += f"&newest={newest}"
 
     headers = {
-        "Authorization": API_KEY,              # 🔑 Aquí va solo tu API Key
-        "Accept": "application/json"           # 👈 Opcional pero recomendado
+    "Authorization": f"Bearer {API_KEY}",
+    "Accept": "application/json"
+}
+
+}
+
     }
 
     response = requests.get(url, headers=headers)
