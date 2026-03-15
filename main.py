@@ -1,8 +1,11 @@
 from flask import Flask, jsonify, request
 import os
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
 API_KEY = os.getenv("INTERVALS_API_KEY")
 ATHLETE_ID = os.getenv("INTERVALS_ATHLETE_ID")
 BASE_URL = "https://intervals.icu/api/v1"
@@ -53,3 +56,10 @@ def create_event():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+```
+
+Y el `requirements.txt` tiene que tener estas tres líneas:
+```
+flask
+requests
+flask-cors
